@@ -34,9 +34,13 @@ export default class Carrito {
     }
 
     actualizar(carr, id){
-        carr.id = Number(id);
-        let index = this.carritos.findIndex((carr) => carr.id == id);
-        this.productos.splice(index, 1, carr);
+        console.log("ID carrito: "+ carr)
+        console.log("ID objeto: "+ id)
+        const producto = this.producto.listar(id);
+        this.carritos.forEach((carro) =>{
+            carro.id == carr ? carro.productos.splice(producto) : null;
+        });
+        return this.carritos;
     }
 
     borrar(id){

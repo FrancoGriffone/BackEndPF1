@@ -18,7 +18,7 @@ router.delete("/:id", (req, res) => {
 router.delete("/:id/producto/:id_prod", (req, res) =>{
     const borrarProducto = carrito.actualizar(
         req.params.id,
-        req.params.id_prod
+        req.params.id_prod,
     );
     res.send(borrarProducto);
 });
